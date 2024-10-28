@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biografía</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+        <!-- Navar -->
+        <nav>
+            <ul>
+              <li><a th:href="@{/}">Home</a></li>
+              <li><a th:href="@{/biografia}">Biografía</a></li>
+              <li><a th:href="@{/galeria}">Galería de Fotos</a></li>
+              <li><a th:href="@{/enlaces}">Enlaces Externos</a></li>
+            </ul>
+          </nav>
+
+    <!-- Biografía -->
+    <section id="biografia" class="container">
+        <main>
+      <h2 class="titulo">Biografía</h2>
+      <article>
+        <img
+          src="https://www.lifeboxset.com/wp-content/uploads/2023/07/david-bowie-2023-07-04_08-41-07-785x442.jpg"
+          alt="Foto portada"
+          height="250px"
+        />
+        <div>
+            <p>
+                David Bowie, nacido como David Robert Jones el 8 de enero de 1947 en Londres, Inglaterra, 
+                fue un influyente músico, actor y productor británico. Reconocido por su innovador 
+                enfoque musical y su estilo vanguardista, Bowie se convirtió en una figura icónica de la música contemporánea.
+            </p>
+
+        </div>
+
+      </article>
+      <article>
+        <h2>Música y Álbumes</h2>
+        <p>
+            Bowie lanzó su primer álbum homónimo en 1967, pero su gran éxito llegó con 
+            <em>"The Rise and Fall of Ziggy Stardust and the Spiders from Mars"</em> en 1972, donde adoptó 
+            su famoso alter ego Ziggy Stardust. A lo largo de su carrera, exploró diversos géneros, 
+            incluyendo rock, pop, soul y electrónica, con álbumes destacados como 
+            <em>"Young Americans"</em>, <em>"Heroes"</em> y <em>"Let’s Dance"</em>.
+        </p>
+
+        <div>
+          <h2>Discografía</h2>
+          <ul>
+            <li th:each="disco:${discos}">
+              <span th:text="${disco}"></span>
+            </li>
+          </ul>
+        </div>
+        </article>
+
+        <article>
+        <h2>Innovación Artística</h2>
+        <p>
+            Conocido por su habilidad para reinventarse, Bowie desafió las normas de género y estética 
+            en su música y su imagen. Su enfoque teatral y su estilo único lo convirtieron en un ícono 
+            del glam rock y un precursor del punk y del new wave.
+        </p>
+        </article>
+
+        <article>
+        <h2>Cine y Actuación</h2>
+        <p>
+            Además de su carrera musical, Bowie también actuó en varias películas, siendo notable su 
+            papel en <em>"The Man Who Fell to Earth"</em> (1976) y su participación en <em>"Labyrinth"</em> (1986).
+        </p>
+        </article>
+
+        <article>
+        <h2>Legado y Reconocimientos</h2>
+        <p>
+            A lo largo de su vida, Bowie recibió numerosos premios y reconocimientos, incluyendo 
+            múltiples Grammy y un Grammy Lifetime Achievement Award. Su influencia se extiende a 
+            generaciones de músicos y artistas en diversas disciplinas.
+        </p>
+        </article>
+
+        <article>
+        <h2>Fallecimiento</h2>
+        <p>
+            Bowie falleció el 10 de enero de 2016, dos días después de su 69 cumpleaños, tras una 
+            batalla contra el cáncer. Su legado perdura como uno de los artistas más innovadores y 
+            carismáticos de la historia de la música.
+        </p>
+        </article>
+
+        </article>
+    </main>
+   </section>
+
+
+      <footer>&copy; Mercedes Amor Gallart</footer>  
+    
+    
+  </body>
+</html>

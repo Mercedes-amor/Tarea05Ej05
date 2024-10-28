@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enlaces externos</title>
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+        <!-- Navar -->
+        <nav>
+            <ul>
+              <li><a th:href="@{/}">Home</a></li>
+              <li><a th:href="@{/biografia}">Biografía</a></li>
+              <li><a th:href="@{/galeria}">Galería de Fotos</a></li>
+              <li><a th:href="@{/enlaces}">Enlaces Externos</a></li>
+            </ul>
+          </nav>
+
+    <!-- Enlaces Externos -->
+    <section id="enlaces" class="section">
+      <h2 class="titulo">Enlaces Externos</h2>
+
+      </ul>
+      <ul>
+        <li><a href="https://www.google.com/search?sca_esv=f5734af37fe2ac71&q=david+bowie&source=lnms&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgWizR0-0aFOH11Sb5tlNhdzTfxpAVBoexMFZnKJBpl_OnTFfcge8advfRBIXE7C_RTWsQyN_EAXpveg0t_aQzyue0QLBdLIIB4yPNh3d_PJPUzbsSXZ5v66lKVX9VeVq7X0wPEHFSSCnwDKA27vYqLsW9OaXj1B6MnDW-62zIxs_sHuC8&sa=X&ved=2ahUKEwiuybWT5ZeJAxUAS_EDHcShBZ0Q0pQJegQIERAB&biw=1536&bih=738&dpr=1.25" target="_blank">info Google</a></li>
+        <li>
+          <a href="https://es.wikipedia.org/wiki/David_Bowie" target="_blank">info Wikipedia</a>
+        </li>
+        <li>
+            <a href="https://www.davidbowie.com/" target="_blank">web oficial</a>
+          </li>
+      </ul>
+      
+      <img src="https://media.revistagq.com/photos/64905a5a2a10c0f8ee31a67f/16:9/w_1920,c_limit/bowie.jpg" alt="Foto 5" height="250px"/>
+
+    </section>
+    <footer>&copy; Mercedes Amor Gallart</footer>
+
+  </body>
+</html>

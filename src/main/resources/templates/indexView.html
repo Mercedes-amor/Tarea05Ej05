@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercedes Amor - Tarea 3</title>
+    
+    <!-- ESto falla! -->
+    <!-- <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+
+    <link rel="stylesheet" href="styles.css" />
+
+  </head>
+  <body>
+    <!-- Navar -->
+    <nav th:fragment="menu" class="navbar navbar-expand-sm">
+      <ul class="navbar-nav">
+        <li><a class="nav-link active" th:href="@{/}">Home</a></li>
+        <li><a class="nav-link active" th:href="@{/biografia}">Biografía</a></li>
+        <li><a class="nav-link active" th:href="@{/galeria}">Galería de Fotos</a></li>
+        <li><a class="nav-link active" th:href="@{/enlaces}">Enlaces Externos</a></li>
+      </ul>
+    </nav>
+
+    <!-- Bienvenida sin Optional -->
+     <!-- <h1 id="bienvenida"> 
+      Bienvenido/a 
+      <span th:text="${nombreUsuario}"></span> 
+      a nuestra web
+    </h1> -->
+
+    <!-- Bienvenida con Optional -->
+     <h1 id="bienvenida"> 
+      Bienvenido/a 
+      <span th:if="${!nombreUsuario.isEmpty}" th:text="${nombreUsuario}"></span> 
+      a nuestra web
+    </h1>
+
+    <!-- Home -->
+    <section id="home" class="container">
+      <h1 class="titulo">David Bowie</h1>
+      <article id="cabecera">        
+        <img
+          src="https://m.media-amazon.com/images/I/71TdkhuVmkL._SL1500_.jpg"
+          alt="Foto portada"
+          height="300px"
+        />
+        <div>
+          David Bowie (1947-2016) fue un icónico músico, cantante, compositor y
+          actor británico, conocido por su versatilidad artística y su
+          influencia en la música y la cultura pop. Fue un innovador tanto en su
+          música como en su imagen, cambiando constantemente de estilo y
+          adoptando personajes únicos, como el famoso Ziggy Stardust. A lo largo
+          de su carrera, Bowie mezcló géneros musicales como el rock, el pop, el
+          funk y la electrónica, produciendo éxitos como "Space Oddity",
+          "Heroes", "Let's Dance" y "Changes". Su estilo camaleónico rompió
+          barreras de género y sexualidad, y su influencia perdura tanto en la
+          música como en la moda y el arte. Bowie también trabajó como actor,
+          destacando en películas como "El hombre que cayó a la Tierra" y
+          "Labyrinth". Fue un artista pionero y visionario que dejó un legado
+          profundo en la cultura contemporánea.
+        </div>
+
+      </article>
+    </section>
+
+    <footer>&copy; Mercedes Amor Gallart - 
+      <span th:text="${year}">3000</span>
+    </footer>
+  </body>
+</html>
