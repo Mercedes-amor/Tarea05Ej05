@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enlaces externos</title>
-    <link rel="stylesheet" href="styles.css">
+    <head th:replace="~{/fragments/header.html::cabecera}"></head>>
 
   </head>
   <body>
         <!-- Navar -->
-        <nav>
-            <ul>
-              <li><a th:href="@{/}">Home</a></li>
-              <li><a th:href="@{/biografia}">Biografía</a></li>
-              <li><a th:href="@{/galeria}">Galería de Fotos</a></li>
-              <li><a th:href="@{/enlaces}">Enlaces Externos</a></li>
-            </ul>
-          </nav>
+        <nav th:replace="~{/fragments/header.html::menu}"></nav>
+
 
     <!-- Enlaces Externos -->
     <section id="enlaces" class="section">
