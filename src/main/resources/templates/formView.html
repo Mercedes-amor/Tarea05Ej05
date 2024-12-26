@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="~{/fragments/header.html::cabecera}"></head>
+
+  <body>
+    <!-- Navar -->
+    <nav th:replace="~{/fragments/header.html::menu}"></nav>
+
+    <!-- Formulario -->
+    <section id="formulario" class="container">
+      <main>
+        <h2 class="titulo">Contacto</h2>
+        <article>
+          <div>
+            <form
+              action="#"
+              th:action="@{/formulario}"
+              method="post"
+              th:object="${formInfo}"
+              enctype="multipart/form-data"
+            >
+              <div class="divForm">
+                <!-- Nombre -->
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  th:field="*{nombre}"
+                />
+                <!-- Mensaje error -->
+                <p
+                  th:if="${#fields.hasErrors('nombre')}"
+                  th:errors="*{nombre}"
+                  style="color: red"
+                ></p>
+
+                <!-- dni -->
+                <label for="dni" class="form-label">DNI:</label>
+                <input type="text" id="dni" name="dni" th:field="*{dni}" />
+                <!-- Mensaje error -->
+                <p
+                  th:if="${#fields.hasErrors('dni')}"
+                  th:errors="*{dni}"
+                  style="color: red"
+                ></p>
+
+                <!-- email -->
+                <label for="email" class="form-label">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  th:field="*{email}"
+                />
+                <!-- Mensaje error -->
+                <p
+                  th:if="${#fields.hasErrors('email')}"
+                  th:errors="*{email}"
+                  style="color: red"
+                ></p>
+
+                <!-- dirección -->
+                <label for="direccion" class="form-label"
+                  >Dirección de envío:</label
+                >
+                <input
+                  type="text"
+                  id="direccion"
+                  name="direccion"
+                  th:field="*{direccion}"
+                />
+                <!-- Mensaje error -->
+                <p
+                  th:if="${#fields.hasErrors('direccion')}"
+                  th:errors="*{direccion}"
+                  style="color: red"
+                ></p>
+
+                <!-- <Tipo Producto /> -->
+                <label for="tipoProducto" class="form-label"
+                  >Tipo de producto:</label
+                >
+                <select
+                  class="form-select"
+                  id="tipoProducto"
+                  name="tipoProducto"
+                  th:field="*{tipoProducto}"
+                >
+                  <option
+                    th:each="producto : ${T(mag.ej03.TipoProducto).values()}"
+                    th:value="${producto}"
+                    th:text="${producto}"
+                  ></option>
+                </select>
+
+                <!-- Mensaje error -->
+                <p
+                  th:if="${#fields.hasErrors('tipoProducto')}"
+                  th:errors="*{tipoProducto}"
+                  style="color: red"
+                ></p>
+
+                <div class="subDivForm">
+                  <label for="condiciones" class="form-label"
+                    >Acepta condiciones</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="condiciones"
+                    name="condiciones"
+                    th:field="*{condiciones}"
+                  />
+                </div>
+                <!-- Mensaje error -->
+                <p
+                th:if="${#fields.hasErrors('condiciones')}"
+                th:errors="*{condiciones}"
+                style="color: red"
+              ></p>
+
+                <label for="fichero" class="form-label"
+                  >Adjuntar un fichero:</label
+                >
+                <input
+                  type="file"
+                  id="fichero"
+                  name="fichero"
+                  th:field="*{fichero}"
+                />
+                <!-- Mensaje error -->
+                <span
+                  th:if="${#fields.hasErrors('fichero')}"
+                  th:errors="*{fichero}"
+                  style="color: red"
+                ></span>
+
+                <div class="subDivForm">
+                  <button type="submit">Enviar</button>
+                </div>
+              </div>
+            </form>
+
+            <!-- <Mensaje formulario enviado /> -->
+            <span th:if="${formularioEnviado}" style="color: rgb(17, 92, 10)">
+              <p th:text="${formularioEnviado}"></p>
+            </span>
+          </div>
+        </article>
+      </main>
+    </section>
+
+    <footer>&copy; Mercedes Amor Gallart</footer>
+  </body>
+</html>

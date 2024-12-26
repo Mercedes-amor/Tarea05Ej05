@@ -23,7 +23,7 @@ body {
 
 
 /* Estilo del navbar */
-/* nav {
+nav {
     background-color: #413b3b;
     padding: 10px;
 }
@@ -39,14 +39,17 @@ nav ul li {
     margin-right: 15px;
 }
 
-nav ul li a {
+nav ul li a{
     color: white;
     text-decoration: none;
+    padding: 6px 6px;
+    margin: 6px;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
-} */
+    transition-duration: 0.5s;
+    color: #c08a8a;
+}
 
 /*HOME*/
 
@@ -79,6 +82,33 @@ img {
 
 }
 
+
+/*FORMULARIO*/
+
+form{
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+}
+
+.divForm{
+    display: flex;
+    padding: 16px 16px;
+    margin: 6px;
+    flex-direction: column;
+}
+
+.subDivForm{
+    margin: 15px 0px;
+}
+
+.subDivForm button {
+    background-color: #413b3b;
+    color: azure;
+    padding: 10px 15px;
+    border-radius: 9px;
+
+}
 /* Estilos del footer */
 footer {
     background-color: #333;
